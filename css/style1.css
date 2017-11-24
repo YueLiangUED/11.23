@@ -62,8 +62,7 @@ main section:nth-child(2) ul li.active>div{
 main section:nth-child(2) ul li div{
     position: relative;
     box-sizing: border-box;
-    display: flex;
-    align-items: center;
+    line-height: .9rem;
     margin: 0 auto;
     padding-left: .32rem;
     width: 5.74rem;
