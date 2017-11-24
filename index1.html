@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+<header></header>
+<main>
+    <section>
+        <p id="telNum">13651312162</p>
+        <p>我的金币：<span>499</span>枚</p>
+    </section>
+    <section>
+        <ul id="tab">
+            <li>
+                <div>
+                    <span></span>
+                    <span>需消耗<i>100</i>枚金币</span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <span></span>
+                    <span>需消耗<i>200</i>枚金币</span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <span></span>
+                    <span>需消耗<i>500</i>枚金币</span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <span></span>
+                    <span>需消耗<i>1024</i>枚金币</span>
+                </div>
+            </li>
+        </ul>
+        <div>
+            <footer>
+                <div>暂不兑换</div>
+                <div id="conversionBtn">兑换</div>
+            </footer>
+        </div>
+    </section>
+</main>
+<footer class="last"></footer>
+<!--遮罩层-->
+<div id="mask" class="mask"></div>
+<!-- 是否确定兑换流量弹窗 开始 -->
+<div id="tc_whether" class="modal" style="display: none;">
+    <div class="flex">
+        <div class="modal-content">
+            <div class="modal-head"></div>
+            <div class="modal-body">
+                <div class="modal-body-container exchange">
+                    <div class="exchange-text">
+                        <p><span>139****1234</span>用户</p>
+                        <p>活动期间只能兑换一次流量，是否确定兑换<span id="flowNum">100M</span>流量？</p>
+                    </div>
+                    <div class="modal-btn-group">
+                        <div class="modal-btn-cancel">取消</div>
+                        <div class="modal-btn-enter">确定</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-close-btn"></div>
+        </div>
+    </div>
+</div>
+<!-- 是否确定兑换流量弹窗 结束 -->
+<!-- 来晚了弹窗 开始 -->
+<div id="tc_late" class="modal" style="display: none;">
+    <div class="flex">
+        <div class="modal-content">
+            <div class="modal-head" style="background-image: url('images/modalHead_03.png');"></div>
+            <div class="modal-body">
+                <div class="modal-body-container exchange-late">
+                    <div class="exchange-late-text">
+                        <p class="exchange-late-text-islate">来晚了！</p>
+                        <p>客官您来晚了，该档次的流量已被兑完~</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-close-btn"></div>
+        </div>
+    </div>
+</div>
+<!-- 来晚了弹窗 结束 -->
+<!-- 兑换成功弹窗 开始 -->
+<div id="tc_successful" class="modal" style="display: none;">
+    <div class="flex">
+        <div class="modal-content">
+            <div class="modal-head" style="background-image: url('images/modalHead_02.png');"></div>
+            <div class="modal-body">
+                <div class="modal-body-container">
+                    <p style="font-size: 0.45rem; color: #5681fc;margin-bottom: 0.35rem;margin-top: 0.9rem;">兑换成功</p>
+                    <div class="modal-btn">查查我的奖品</div>
+                </div>
+            </div>
+            <div class="modal-close-btn"></div>
+        </div>
+    </div>
+</div>
+<!-- 兑换成功弹窗 结束 -->
+<!-- 不要贪心已经兑换过弹窗 开始 -->
+<div id="tc_greedy" class="modal" style="display: none;">
+    <div class="flex">
+        <div class="modal-content">
+            <div class="modal-head" style="background-image: url('images/modalHead_02.png');"></div>
+            <div class="modal-body">
+                <div class="modal-body-container">
+                    <p style="font-size: 0.45rem; color: #5681fc;margin-bottom: 0.35rem;margin-top: 0.5rem;">不要贪心哦<br />您已经兑换过咯</p>
+                    <div class="modal-btn">查查我的奖品</div>
+                </div>
+            </div>
+            <div class="modal-close-btn"></div>
+        </div>
+    </div>
+</div>
+<!-- 不要贪心已经兑换过弹窗 结束 -->
+</body>
+</html>
+<script src="js/jquery-1.10.1.min.js"></script>
+<script src="js/index.js"></script>
+<script>
+    window.onload = function () {
+        $("#mask").hide();
+    }
+</script>

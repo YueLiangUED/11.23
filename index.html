@@ -23,7 +23,7 @@
 <main>
     <section>
         <div>
-            已签到<span></span>天
+            已签到<span>0</span>天
         </div>
         <div id="myRecord"></div>
         <ul>
@@ -66,6 +66,220 @@
 </div>
 <!--操作指南4-->
 <div class="explain fou"></div>
+<!-- 活动规则弹窗 开始 -->
+<div id="tc_rule" class="modal" style="display: none;">
+    <div class="flex">
+        <div class="modal-content">
+            <div class="modal-head"></div>
+            <div class="modal-body">
+                <div class="modal-body-title">活动规则</div>
+                <div class="modal-body-container rule">
+                    <div class="rule-box">
+                        1、<b>活动时间</b><br />
+                        2017年11月30日—2017年12月14日<br /><br />
+                        2、活动对象<br />
+                        10086APP广东移动用户<br /><br />
+                        3、<b>参与方式</b><br />
+                        签到：活动期间，点击“一键签到”完成当天签到，签到成功可随机获得10、20、50、1024枚金币。<br />
+                        补签：点击‘我要补签’可对前三天进行补签，每完成两个补签任务即可完成1天补签，补签成功可随机获得10、20、50、1024枚金币。<br />
+                        获奖方式：<br />
+                        活动期间，用户满足条件即可凭借金币在流量兑换铺中兑换同等流量。奖品为100M、200M、500M、1G。同一用户只能兑换一次，数量有限，先到先得。<br /><br />
+                        4、<b>活动奖品</b><br />
+                        均为国内通用流量<br />
+                        1G：300份<br />
+                        500M：1000份<br />
+                        200M：3000份<br />
+                        100M：6408份<br /><br />
+                        5、奖品将在48小时内放入10086APP领奖中心，请于12月31日前登录【10086APP-全部/更多-领奖中心】领取兑换；逾期不兑换，流量会在活动结束后的50个工作日充值到账。奖品为国内通用流量，有效期至流量到账当月（自然月）最后一天。<br /><br />
+                        6、奖品中奖查询：活动期间，客户可点击活动首页“我的奖品”查看。<br /><br />
+                        7、同一设备号、同一手机号活动期间限获奖一次。<br /><br />
+                        8、以下情况客户无法参与活动：非广东移动客户、限定客户、GPRS无限量套餐客户、4G随心王套餐客户、多号通的副号、一卡双号副号、家庭服务计划副号、万能副卡等附属号码客户、内部员工号码、物联网卡/机器卡客户、集团代付/对公托收（如政企动力100行业卡）客户、集团全额统付号码、任我用客户、万花筒客户、手机状态异常（停机、销户、欠费、转品牌未生效等状态）号码。<br /><br />
+                        9、若发现作弊行为，中国移动有资格取消其中奖资格，不作任何补偿。
+                    </div>
+                </div>
+            </div>
+            <div class="modal-close-btn"></div>
+        </div>
+    </div>
+</div>
+<!-- 活动规则弹窗 结束 -->
+<!-- 签到获得金币纪录弹窗 开始 -->
+<div id="tc_record" class="modal" style="display: none;">
+    <div class="flex">
+        <div class="modal-content">
+            <div class="modal-head"></div>
+            <div class="modal-body">
+                <div class="modal-body-title">
+                    我的签到记录
+                </div>
+
+                <div class="modal-body-container attendance-record">
+                    <div class="dashed"></div>
+                    <div class="attendance-record-total">当前共获得：<span class="attendance-record-total-num">333</span>枚金币</div>
+                    <div class="attendance-record-list">
+                        <p><span>2017-11-01 09:01:11</span><span>签到</span><span>获得<i>1</i>枚金币</span></p>
+                        <p><span>2017-11-01 09:01:11</span><span>补签</span><span>获得<i>1</i>枚金币</span></p>
+                        <p><span>2017-11-01 09:01:11</span><span>补签</span><span>获得<i>1</i>枚金币</span></p>
+                    </div>
+                    <div class="modal-btn">
+                        去瞄一下我的账户
+                    </div>
+                </div>
+            </div>
+            <div class="modal-close-btn"></div>
+        </div>
+    </div>
+</div>
+<!-- 签到获得金币纪录弹窗 结束 -->
+<!-- 这里空空如也弹窗 开始 -->
+<div id="tc_nothing" class="modal" style="display: none;">
+    <div class="flex">
+        <div class="modal-content">
+            <div class="modal-head" style="background-image: url('images/modalHead_02.png');"></div>
+            <div class="modal-body">
+                <div class="modal-body-container">
+                    <p style="font-size: 0.45rem; color: #5681fc;margin-bottom: 0.35rem;margin-top: 0.5rem;">这里空空如也<br />加把劲去签到吧~</p>
+                    <div class="modal-btn">继续签到</div>
+                </div>
+            </div>
+            <div class="modal-close-btn"></div>
+        </div>
+    </div>
+</div>
+<!-- 这里空空如也弹窗 结束 -->
+<!-- 已获得xx流量弹窗 开始 -->
+<div id="tc_geting" class="modal" style="display: none;">
+    <div class="flex">
+        <div class="modal-content">
+            <div class="modal-head" style="background-image: url('images/modalHead_02.png');"></div>
+            <div class="modal-body">
+                <div class="modal-body-container">
+                    <p style="font-size: 0.45rem; color: #5681fc;margin-bottom: 0.35rem;margin-top: 0.5rem;">棒棒哒！<br />已获得<span>###</span>流量~</p>
+                    <div class="modal-btn">去瞄一下我的账户</div>
+                </div>
+            </div>
+            <div class="modal-close-btn"></div>
+        </div>
+    </div>
+</div>
+<!-- 已获得xx流量弹窗 结束 -->
+<!-- 需要登录10086弹窗 开始 -->
+<div id="tc_needLogin" class="modal" style="display: none;">
+    <div class="flex">
+        <div class="modal-content">
+            <div class="modal-head" style="background-image: url('images/modalHead_02.png');"></div>
+            <div class="modal-body">
+                <div class="modal-body-container">
+                    <p style="font-size: 0.45rem; color: #5681fc;margin-bottom: 0.35rem;margin-top: 0.5rem;">需要登录10086APP才能<br />参加活动哦~</p>
+                    <div class="modal-btn">点击下载</div>
+                </div>
+            </div>
+            <div class="modal-close-btn"></div>
+        </div>
+    </div>
+</div>
+<!-- 需要登录10086弹窗 结束 -->
+<!-- 活动结束弹窗 开始 -->
+<div id="tc_end" class="modal" style="display: none;">
+    <div class="flex">
+        <div class="modal-content">
+            <div class="modal-head" style="background-image: url('images/modalHead_02.png');"></div>
+            <div class="modal-body">
+                <div class="modal-body-container">
+                    <p style="font-size: 0.45rem; color: #5681fc;margin-bottom: 0.35rem;margin-top: 0.5rem;">活动已结束</p>
+                    <div class="modal-btn">去瞄一下我的账户</div>
+                </div>
+            </div>
+            <div class="modal-close-btn"></div>
+        </div>
+    </div>
+</div>
+<!-- 活动结束弹窗 结束 -->
+<!-- 签到成功获得金币弹窗 开始 -->
+<div id="tc_success" class="modal" style="display: none;">
+    <div class="flex">
+        <div class="modal-content">
+            <div class="modal-head" style="background-image: url('images/modalHead_02.png');"></div>
+            <div class="modal-body">
+                <div class="modal-body-container signIn-success">
+                    <div class="signIn-success-text">
+                        签到成功!<br />
+                        获得<span id="goldNumber">1024</span>枚金币哦~
+                    </div>
+                    <div class="signIn-success-tip">
+                        <span>温馨提示：</span>集满100/200/500/1024枚金币即可前往流量兑换铺兑换流量哦~
+                    </div>
+                    <div class="modal-btn">
+                        进入流量兑换铺
+                    </div>
+                </div>
+            </div>
+            <div class="modal-close-btn"></div>
+        </div>
+    </div>
+</div>
+<!-- 签到成功获得金币弹窗 结束 -->
+<!-- 补签任务弹窗 开始 -->
+<div id="tc_task" class="modal" style="display: none;">
+    <div class="flex">
+        <div class="modal-content">
+            <div class="modal-head"></div>
+            <div class="modal-body">
+                <div class="modal-body-title">活动规则</div>
+                <div class="modal-body-container additional">
+                    <div class="additional-box">
+                        <div class="additional-singn">
+                            <p>
+                                <span>待补签</span><br />
+                                <span>0/2</span>
+                            </p>
+                        </div>
+                        <div class="already-singn">
+                            <p>
+                                <span>已签<br />到</span>
+                            </p>
+
+                        </div>
+                        <div class="additional-singn">
+                            <p>
+                                <span>待补签</span><br />
+                                <span>0/2</span>
+                            </p>
+
+                        </div>
+                    </div>
+                    <p class="additional-tip">同时完成2个补签任务即可补签成功一天</p>
+                    <div class="modal-btn">
+                        补签任务1
+                    </div>
+                    <div class="modal-btn">
+                        补签任务2
+                    </div>
+                </div>
+            </div>
+            <div class="modal-close-btn"></div>
+        </div>
+    </div>
+</div>
+<!-- 补签弹窗 结束 -->
+<!-- 不是受邀用户弹窗 开始 -->
+<div id="tc_noPrivilege" class="modal" style="display: none;">
+    <div class="flex">
+        <div class="modal-content">
+            <div class="modal-head" style="background-image: url('images/modalHead_03.png');"></div>
+            <div class="modal-body">
+                <div class="modal-body-container">
+                    <p style="font-size: 0.454rem;color: #5681fc;margin: 0.5rem 0 0.2rem;font-weight: 700;">很遗憾，您不是本次活动的受邀用户~</p>
+                    <div class="modal-btn">
+                        去瞄一下我的账户
+                    </div>
+                </div>
+            </div>
+            <div class="modal-close-btn"></div>
+        </div>
+    </div>
+</div>
+<!-- 不是受邀用户弹窗 结束 -->
 </body>
 </html>
 <script src="js/jquery-1.10.1.min.js"></script>
