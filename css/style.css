@@ -385,6 +385,15 @@ i {
     height: 0;
     clear: both;
 }
+.additional-box>div:nth-child(1).default,.additional-box>div:nth-child(3).default{
+    background-image: url("../images/icon_01_default.png");
+}
+.additional-box>div:nth-child(2).default{
+    background-image: url("../images/icon_02_default.png");
+}
+.additional-box>div.active{
+    background-image: url("../images/icon_active.png");
+}
 .additional-singn {
     float: left;
     width: 1.98rem;

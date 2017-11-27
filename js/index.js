@@ -12,42 +12,70 @@ $(function () {
         $explain_2 = $('.explain.sec'),
         $explain_3 = $('.explain.thir'),
         $explain_4 = $('.explain.fou'),
+        $mask = $('#mask'),
         explainObj = {
         showExplain_1 : function () {
+            $mask.addClass('clickHide-1');
             $explain_1.show();
             showMask();
         },
         showExplain_2 : function () {
+            $mask.addClass('clickHide-2');
             $explain_2.show();
             showMask();
         },
         showExplain_3 : function () {
+            $mask.addClass('clickHide-3');
             $explain_3.show();
             showMask();
         },
         showExplain_4 : function () {
+            $mask.addClass('clickHide-4');
             $explain_4.show();
             showMask();
         },
         hideExplain_1 : function () {
+            $mask.removeClass('clickHide-1');
             $explain_1.hide();
             hideMask();
         },
         hideExplain_2 : function () {
+            $mask.removeClass('clickHide-2');
             $explain_2.hide();
             hideMask();
         },
         hideExplain_3 : function () {
+            $mask.removeClass('clickHide-3');
             $explain_3.hide();
             hideMask();
         },
         hideExplain_4 : function () {
+            $mask.removeClass('clickHide-4');
             $explain_4.hide();
             hideMask();
         }
     };
     explainObj.showExplain_1();
-
+    $('#mask').on('click',function () {
+        var $this = $(this);
+        if ($this.hasClass('clickHide-1')){
+            $('#qdBtn').removeClass('active');
+            $('#bqBtn').addClass('active');
+            explainObj.hideExplain_1();
+            explainObj.showExplain_2();
+        }else if($this.hasClass('clickHide-2')){
+            $('#bqBtn').removeClass('active');
+            explainObj.hideExplain_2();
+            explainObj.showExplain_3();
+        }else if($this.hasClass('clickHide-3')){
+            $('#shop').addClass('active');
+            explainObj.hideExplain_3();
+            explainObj.showExplain_4();
+        }else if($this.hasClass('clickHide-4')){
+            $('#shop').removeClass('active');
+            explainObj.hideExplain_4();
+        }
+    });
     //弹窗显示关闭
     var tcUtils = {
         //签到获得金币记录弹窗显示
